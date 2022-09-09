@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - Prints a random number and states 
+ *main - Prints a random number and states 
  * if it is postive, negative or zero.
  *
  * Return: Always 0.
