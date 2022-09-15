@@ -2,20 +2,43 @@
 
 /**
  * print_number - prints an integer
- * @n: integer to be printed
+ * @n: int type number
  */
 void print_number(int n)
 {
-	unsigned int num = n;
+	long m;
+	int c;
+	long num;
 
-	if (n < 0)
+	num = n;
+
+	if (num < 0)
 	{
+		num *= -1;
 		_putchar('-');
-		num = -num;
 	}
 
-	if ((num / 10) > 0)
-		print_number(num / 10);
+	m = 1;
+	c = 1;
+	while (c)
+	{
+		if (num / (m * 10) > 0)
+			m *= 10;
+		else
+			c = 0;
+	}
 
-	_putchar((num % 10) + '0');
+	while (num >= 0)
+	{
+		if (m == 1)
+		{
+			_putchar(num % 10 + '0');
+			num = -1;
+		}
+		else
+		{
+			_putchar((num / m % 10) + '0');
+			m /= 10;
+		}
+	}
 }
