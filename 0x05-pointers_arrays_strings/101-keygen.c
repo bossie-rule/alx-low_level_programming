@@ -11,7 +11,7 @@ int main(void)
 	srand(time(NULL));
 	for (count = 0, total = 2000; total >100; count++)
 	{
-		myrand = (rand() % 103) + 1;
+		myrand = (rand() % 125) + 1;
 		printf("%c", myrand);
 		total -= myrand;
 	}
