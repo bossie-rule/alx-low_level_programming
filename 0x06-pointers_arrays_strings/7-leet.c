@@ -8,37 +8,20 @@
  */
 char *leet(char *str)
 {
-	int i = 0;
+	int indx1 = 0, indx2;
+	char leet[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
 
-	while (str[i] != '\0')
+	while (str[indx1])
 	{
-		str[i] = transform(str[i]);
-		i++;
-	}
-	return (str);
-}
-
-/**
- * transform - helper function to map a letter with it's encoding
- * @x: char to be encoded
- *
- * Return: the coded char
- */
-char transform(char x)
-{
-	char mapping_low[8] = { 'o', 'l'. '\0', 'e', 'a', '\0', '\0', 't'};
-	char mapping_upper[8] = {'O', 'L', '\0', 'E', 'A', '\0', '\0', 'T'};
-	int i = 0;
-	char replacement = x;
-
-	while (i < 8)
-	{
-		if (x == mapping_low[i] || x == mapping_upper[i])
+		for (indx2 = 0; indx2 <= 7; indx2++)
 		{
-			replacement = i + '0';
-			break;
+			if (str[indx1] == leet[indx2] ||
+					str[indx1] - 32 == leet[indx2])
+				str[indx1] = indx2 + '0';
 		}
-		i++;
+
+		indx1++;
 	}
-	return (replacement);
+
+	return (str);
 }
