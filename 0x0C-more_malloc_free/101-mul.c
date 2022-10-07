@@ -221,7 +221,6 @@ int main(int argc, char *argv[])
 		get_prod(next_prod, argv[1], digit, zeroes++);
 		add_nums(final_prod, next_prod, size - 1);
 	}
-
 	for (index = 0; final_prod[index]; index++)
 	{
 		if (final_prod[index] != 'x')
